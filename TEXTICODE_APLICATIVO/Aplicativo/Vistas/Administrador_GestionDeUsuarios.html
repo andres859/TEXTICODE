@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Usuarios</title>
+<link rel="stylesheet" href="Administrador_GestionDeUsuarios.css">
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div>
+    <div class="logo">
+      <img src="../texticode/img/logo-texticode.png.png" alt="Logo Texticode">
+    </div>
+    <div class="panel-label">Panel Administrador</div>
+
+    <nav class="menu">
+      <div class="menu-item">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+        Cuenta Personal
+      </div>
+
+      <div class="menu-item active">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
+        Tareas Asignadas
+      </div>
+
+      <div class="menu-item">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+        </svg>
+        Reportar Avances
+      </div>
+    </nav>
+  </div>
+
+  <div class="logout">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
+    </svg>
+    Cerrar Sesión
+  </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+
+<div class="title">Gestión de Usuarios</div>
+
+<div class="top-bar">
+<div class="filters">
+<input class="search" placeholder="Buscar usuarios...">
+<select class="select">
+<option>Todos los roles</option>
+<option>Operador</option>
+<option>Administrador</option>
+<option>Cliente</option>
+</select>
+</div>
+
+<button class="btn" onclick="abrirModal()">
+<svg xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke-width="1.5"
+stroke="currentColor"
+class="btn-icon">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"/>
+</svg>
+Agregar Usuario
+</button>
+
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="stats">
+<div class="stat-card">
+<div class="stat-title">Total Usuarios</div>
+<div class="stat-number">1</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Clientes</div>
+<div class="stat-number green">0</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Administradores</div>
+<div class="stat-number">1</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-title">Operadores</div>
+<div class="stat-number blue">0</div>
+</div>
+</div>
+
+<!-- ===== TABLA ===== -->
+<div class="table-box">
+<div class="table-header">Lista de Usuarios</div>
+
+<table>
+<thead>
+<tr>
+<th>Usuario</th>
+<th>Email</th>
+<th>Rol</th>
+<th>Estado</th>
+<th>Número de Teléfono</th>
+<th>Acciones</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>
+<div class="user">
+<div class="avatar">AP</div>
+Administrador Principal
+</div>
+</td>
+<td>Kevin_Wagner@email.com</td>
+<td><span class="badge-role">ADMINISTRADOR</span></td>
+<td><span class="badge-status active">Activo</span></td>
+<td>+57 322 442 1303</td>
+<td class="actions">
+
+<!-- EDITAR -->
+<svg xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke-width="1.5"
+stroke="currentColor"
+class="icon edit-icon">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/>
+</svg>
+
+<!-- ELIMINAR -->
+<svg xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke-width="1.5"
+stroke="currentColor"
+class="icon delete-icon">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/>
+</svg>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</main>
+
+<!-- ================= MODAL ================= -->
+<div id="modalUsuario" class="modal">
+<div class="modal-content">
+<span class="close" onclick="cerrarModal()">×</span>
+<h2>Agregar Nuevo Usuario</h2>
+
+<form>
+<label>Rol *</label>
+<select>
+<option>Operador</option>
+<option>Administrador</option>
+<option>Cliente</option>
+</select>
+
+<label>Nombre Completo *</label>
+<input type="text" placeholder="Nombre completo del usuario">
+
+<label>Nombre de Usuario *</label>
+<input type="text" placeholder="Nombre de usuario para inicio de sesión">
+
+<label>Correo Electrónico *</label>
+<input type="email" placeholder="correo@ejemplo.com">
+
+<label>Teléfono</label>
+<input type="text" placeholder="+57 300 123 4567">
+
+<label>Dirección</label>
+<input type="text" placeholder="Dirección completa">
+
+<label>Contraseña *</label>
+<input type="password" placeholder="Contraseña para inicio de sesión">
+
+<div class="modal-buttons">
+<button type="button" class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+<button type="submit" class="btn-submit">Agregar Usuario</button>
+</div>
+</form>
+
+</div>
+</div>
+
+<script>
+function abrirModal(){
+document.getElementById("modalUsuario").style.display="flex";
+}
+function cerrarModal(){
+document.getElementById("modalUsuario").style.display="none";
+}
+</script>
+
+</body>
+</html>
