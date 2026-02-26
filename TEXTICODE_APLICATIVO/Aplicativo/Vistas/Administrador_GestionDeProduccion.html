@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion de Produccion - Texticode</title>
+<link rel="stylesheet" href="../css/Administrador_GestionDeProduccion.css">
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar">
+  <div>
+    <div class="logo">
+      <img src="../img/LogoTexticode.png" alt="Logo Texticode">
+    </div>
+    <div class="panel-label">Panel Administrador</div>
+
+    <nav class="menu">
+      <a class="menu-item" href="../Vistas/Administrador_GestionDeUsuarios.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
+        Gestion de Usuarios
+      </a>
+
+      <a class="menu-item active" href="../Vistas/Operario_TareasAsignadas.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
+        Gestion de Clientes
+      </a>
+
+      <a class="menu-item" href="reportar-avances.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+        </svg>
+        Gestion de inventario
+      </a>
+
+       <a class="menu-item" href="reportar-avances.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+        </svg>
+        Reportes
+      </a>
+
+       <a class="menu-item" href="reportar-avances.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+        </svg>
+        Gestion de Produccion
+      </a>
+    </nav>
+  </div>
+
+  <div class="logout">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
+    </svg>
+    Cerrar Sesión
+  </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="main">
+
+  <h1 class="title">Gestion De Produccion</h1>
+  <h2 class="title">Ordenes de Produccion </h2>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Total Ordenes</span>
+        <span class="stat-icon orange">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7v5l3 3"/>
+          </svg>
+        </span>
+      </div>
+      <div class="stat-number orange">1</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">En Proceso</span>
+        <span class="stat-icon blue">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M8 12h8M12 8v8"/>
+          </svg>
+        </span>
+      </div>
+      <div class="stat-number blue">1</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Completadas</span>
+        <span class="stat-icon green">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 12.5l2.5 2.5 4.5-4.5"/>
+          </svg>
+        </span>
+      </div>
+      <div class="stat-number green">1</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-header">
+        <span class="stat-title">Retrasadas</span>
+        <span class="stat-icon gray">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 8v4M12 16h.01"/>
+          </svg>
+        </span>
+      </div>
+      <div class="stat-number gray">3</div>
+    </div>
+  </div>
+
+  <!-- ===== TABLA ÓRDENES DE PRODUCCIÓN ===== -->
+  <div class="section-card">
+    <div class="section-header">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+      </svg>
+      <h2 class="section-title">Órdenes de Producción</h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Orden</th>
+            <th>Cliente</th>
+            <th>Producto</th>
+            <th>Operador</th>
+            <th>Estado</th>
+            <th>Prioridad</th>
+            <th>Progreso</th>
+            <th>Fecha Límite</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Orden 001 -->
+          <tr>
+            <td class="order-id">001</td>
+            <td>Textiles del Norte</td>
+            <td>Camisetas Polo x 50</td>
+            <td>
+              <div class="operator-cell">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+                María González
+              </div>
+            </td>
+            <td>
+              <select class="action-select en-proceso-select">
+                <option>En Proceso</option>
+                <option>Pendiente</option>
+                <option>Completado</option>
+                <option>Retrasado</option>
+              </select>
+            </td>
+            <td><span class="badge-priority alta">Alta</span></td>
+            <td>
+              <div class="table-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+                <span class="progress-pct-small">75%</span>
+              </div>
+            </td>
+            <td class="fecha-limite">2024-03-15</td>
+            <td class="acciones-cell">
+              <button class="btn-accion btn-ver" title="Ver detalle">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </button>
+              <button class="btn-accion btn-editar" title="Editar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+              </button>
+              <button class="btn-accion btn-eliminar" title="Eliminar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/></svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Orden 002 -->
+          <tr>
+            <td class="order-id">002</td>
+            <td>Moda &amp; Estilo</td>
+            <td>Vestidos x 25</td>
+            <td>
+              <div class="operator-cell">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+                Carlos Pérez
+              </div>
+            </td>
+            <td>
+              <select class="action-select pendiente-select">
+                <option>Pendiente</option>
+                <option>En Proceso</option>
+                <option>Completado</option>
+                <option>Retrasado</option>
+              </select>
+            </td>
+            <td><span class="badge-priority media">Media</span></td>
+            <td>
+              <div class="table-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+                <span class="progress-pct-small">0%</span>
+              </div>
+            </td>
+            <td class="fecha-limite">2024-04-01</td>
+            <td class="acciones-cell">
+              <button class="btn-accion btn-ver" title="Ver detalle">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </button>
+              <button class="btn-accion btn-editar" title="Editar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+              </button>
+              <button class="btn-accion btn-eliminar" title="Eliminar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/></svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Orden 003 -->
+          <tr>
+            <td class="order-id">003</td>
+            <td>Uniformes Pro</td>
+            <td>Uniformes x 100</td>
+            <td>
+              <div class="operator-cell">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+                Ana Rodríguez
+              </div>
+            </td>
+            <td>
+              <select class="action-select atrasado-select">
+                <option>Retrasado</option>
+                <option>En Proceso</option>
+                <option>Pendiente</option>
+                <option>Completado</option>
+              </select>
+            </td>
+            <td><span class="badge-priority alta">Alta</span></td>
+            <td>
+              <div class="table-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+                <span class="progress-pct-small">60%</span>
+              </div>
+            </td>
+            <td class="fecha-limite vencida">2024-02-28</td>
+            <td class="acciones-cell">
+              <button class="btn-accion btn-ver" title="Ver detalle">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </button>
+              <button class="btn-accion btn-editar" title="Editar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+              </button>
+              <button class="btn-accion btn-eliminar" title="Eliminar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/></svg>
+              </button>
+            </td>
+          </tr>
+
+          <!-- Orden 004 -->
+          <tr>
+            <td class="order-id">004</td>
+            <td>Textil Innovación</td>
+            <td>Pantalones x 30</td>
+            <td>
+              <div class="operator-cell">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0"/></svg>
+                Luis Martín
+              </div>
+            </td>
+            <td>
+              <select class="action-select completado-select">
+                <option>Completado</option>
+                <option>En Proceso</option>
+                <option>Pendiente</option>
+                <option>Retrasado</option>
+              </select>
+            </td>
+            <td><span class="badge-priority baja">Baja</span></td>
+            <td>
+              <div class="table-progress">
+                <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+                <span class="progress-pct-small">100%</span>
+              </div>
+            </td>
+            <td class="fecha-limite">2024-03-20</td>
+            <td class="acciones-cell">
+              <button class="btn-accion btn-ver" title="Ver detalle">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </button>
+              <button class="btn-accion btn-editar" title="Editar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125"/></svg>
+              </button>
+              <button class="btn-accion btn-eliminar" title="Eliminar">
+                <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/></svg>
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== ÚLTIMOS AVANCES REPORTADOS ===== -->
+  <div class="section-card">
+    <div class="section-header">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+      </svg>
+      <h2 class="section-title">Últimos Avances Reportados</h2>
+    </div>
+
+    <!-- Avance Card -->
+    <div class="avance-card">
+      <div class="avance-top">
+        <div>
+          <div class="avance-id">001</div>
+          <div class="avance-product">Camisetas Polo x 50</div>
+        </div>
+        <span class="badge en-proceso">En Proceso</span>
+      </div>
+
+      <div class="avance-meta">
+        <div class="avance-meta-item">
+          <span class="avance-label">Operador:</span>
+          <span class="avance-value">María González</span>
+        </div>
+        <div class="avance-meta-item">
+          <span class="avance-label">Prendas completadas:</span>
+          <span class="avance-value">38 de 50</span>
+        </div>
+        <div class="avance-meta-item">
+          <span class="avance-label">Último reporte:</span>
+          <span class="avance-value">2024-03-03</span>
+        </div>
+      </div>
+
+      <div class="avance-progress-row">
+        <span class="avance-progress-label">Progreso:</span>
+        <span class="avance-pct">75%</span>
+      </div>
+      <div class="progress-bar avance-bar">
+        <div class="progress-fill" style="width:75%"></div>
+      </div>
+
+      <div class="avance-note">
+        Completado el armado de mangas y aplicación de botones en 38 unidades.
+      </div>
+    </div>
+
+  </div>
+
+   <div class="avance-card">
+      <div class="avance-top">
+        <div>
+          <div class="avance-id">00</div>
+          <div class="avance-product">Uniformes x 100</div>
+        </div>
+        <span class="badge en-proceso">Retrasado</span>
+      </div>
+
+      <div class="avance-meta">
+        <div class="avance-meta-item">
+          <span class="avance-label">Operador:</span>
+          <span class="avance-value">Ana Rodriguez</span>
+        </div>
+        <div class="avance-meta-item">
+          <span class="avance-label">Prendas completadas:</span>
+          <span class="avance-value">60 de 100</span>
+        </div>
+        <div class="avance-meta-item">
+          <span class="avance-label">Último reporte:</span>
+          <span class="avance-value">2024-03-02</span>
+        </div>
+      </div>
+
+      <div class="avance-progress-row">
+        <span class="avance-progress-label">Progreso:</span>
+        <span class="avance-pct">60%</span>
+      </div>
+      <div class="progress-bar avance-bar">
+        <div class="progress-fill" style="width:75%"></div>
+      </div>
+
+      <div class="avance-note">
+        Retraso por falta de hilos especiales
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>
