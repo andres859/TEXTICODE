@@ -28,7 +28,7 @@ body {
 .menu-item {
   text-decoration: none;
   color: inherit;
-  display: flex;       /* si aún no lo tenías */
+  display: flex;      
   align-items: center;
   gap: 10px;
 }
