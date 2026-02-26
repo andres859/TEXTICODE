@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro de Soporte – Texticode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/Cliente_CentroSoporte.css">
+</head>
+<body>
+
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-logo">
+      <img src="../img/LogoTexticode.png" alt="Logo Texticode" width="80" height="80">
+      <span style="font-size:0.78rem;font-weight:800;letter-spacing:0.1em;color:#06086c;margin-top:-20px;"></span>
+    </div>
+
+    <div class="sidebar-subtitle">Portal Cliente</div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="#">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </span>
+        Cuenta Personal
+      </a>
+      <a class="nav-item" href="Cliente_PedidosEntregas.html">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        Pedidos y Entregas
+      </a>
+      <a class="nav-item active" href="#">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </span>
+        Centro de Soporte
+      </a>
+    </nav>
+
+    <div class="sidebar-logout">
+      <button class="logout-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Cerrar Sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <h1>Centro de Soporte</h1>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active" data-tab="comprobantes">Comprobantes</div>
+      <div class="tab" data-tab="contacto">Contacto</div>
+    </div>
+
+    <!-- PANEL: COMPROBANTES -->
+    <div class="panel active" id="panel-comprobantes">
+      <div class="search-bar">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Buscar comprobantes..." />
+      </div>
+
+      <div id="doc-list"></div>
+      <div class="no-results" id="no-results">No se encontraron comprobantes</div>
+    </div>
+
+    <!-- PANEL: CONTACTO -->
+    <div class="panel" id="panel-contacto">
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="card-title"><span>📞</span> Información de Contacto</div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <div class="contact-item-info"><label>Teléfono</label><span>+57 (4) 444-5555</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div class="contact-item-info"><label>WhatsApp</label><span>+57 300 123 4567</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-info"><label>Email</label><span>soporte@texticode.com</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-info"><label>Dirección</label><span>Carrera 70 #45-30, Bogotá, Colombia</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-info"><label>Horarios de Atención</label><span>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 12:00 PM</span></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-title"><span>❓</span> Preguntas Frecuentes</div>
+          <div class="faq-item">
+            <div class="faq-q"><div class="faq-accent" style="background:#3B82F6"></div>¿Cómo puedo rastrear mi pedido?</div>
+            <div class="faq-a">Puedes rastrear tu pedido en la sección 'Pedidos y Entregas' donde encontrarás el estado actualizado y la información de seguimiento.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><div class="faq-accent" style="background:#10B981"></div>¿Dónde descargo mis comprobantes?</div>
+            <div class="faq-a">Los comprobantes están disponibles en la pestaña 'Comprobantes' de esta sección una vez que tu pedido haya sido entregado.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><div class="faq-accent" style="background:#8B5CF6"></div>¿Cómo modifico un pedido?</div>
+            <div class="faq-a">Para modificar un pedido, crea un ticket de soporte en la categoría 'Pedidos' con los detalles del cambio requerido.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><div class="faq-accent" style="background:#F59E0B"></div>¿Qué hacer si hay retrasos?</div>
+            <div class="faq-a">Si tu pedido presenta retrasos, te notificaremos automáticamente. También puedes contactarnos para obtener información detallada.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  const docs = [
+    { num: '001', type: 'Comprobante', date: '19/01/2024', size: '245 KB', client: 'María González' },
+    { num: '002', type: 'Factura',      date: '16/01/2024', size: '189 KB', client: 'María González' },
+    { num: '003', type: 'Guía',         date: '04/01/2024', size: '156 KB', client: 'María González' },
+  ];
+
+  function renderDocs(filter) {
+    const list = document.getElementById('doc-list');
+    const noResults = document.getElementById('no-results');
+    const q = (filter || '').toLowerCase();
+
+    const filtered = docs.filter(d =>
+      d.type.toLowerCase().includes(q) || d.num.includes(q)
+    );
+
+    if (filtered.length === 0) {
+      list.innerHTML = '';
+      noResults.style.display = 'block';
+      return;
+    }
+
+    noResults.style.display = 'none';
+    list.innerHTML = filtered.map(doc => `
+      <div class="doc-card">
+        <div class="doc-icon">📄</div>
+        <div class="doc-num-badge">
+          <span class="doc-num">${doc.num}</span>
+          <span class="badge">Disponible</span>
+        </div>
+        <div class="doc-meta">
+          <div class="meta-item"><label>Tipo:</label><span>${doc.type}</span></div>
+          <div class="meta-item"><label>Fecha entrega:</label><span>${doc.date}</span></div>
+          <div class="meta-item"><label>Tamaño:</label><span>${doc.size}</span></div>
+          <div class="meta-item"><label>Cliente:</label><span>${doc.client}</span></div>
+        </div>
+        <div class="doc-actions">
+          <button class="btn-ver">👁 Ver</button>
+          <button class="btn-download">⬇ Descargar</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Search
+  document.getElementById('search-input').addEventListener('input', function () {
+    renderDocs(this.value);
+  });
+
+  // Initial render
+  renderDocs('');
+</script>
+
+</body>
+</html>
