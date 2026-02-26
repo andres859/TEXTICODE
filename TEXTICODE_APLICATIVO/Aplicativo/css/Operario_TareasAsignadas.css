@@ -25,6 +25,14 @@ body {
   justify-content: space-between;
 }
 
+.menu-item {
+  text-decoration: none;
+  color: inherit;
+  display: flex;       /* si aún no lo tenías */
+  align-items: center;
+  gap: 10px;
+}
+
 .logo {
   text-align: center;
   margin-bottom: 10px;
