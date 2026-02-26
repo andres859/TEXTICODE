@@ -25,14 +25,6 @@ body {
   justify-content: space-between;
 }
 
-.menu-item {
-  text-decoration: none;
-  color: inherit;
-  display: flex;       /* si aún no lo tenías */
-  align-items: center;
-  gap: 10px;
-}
-
 .logo {
   text-align: center;
   margin-bottom: 10px;
@@ -40,28 +32,6 @@ body {
 
 .logo img {
   width: 120px;
-}
-
-/* Fallback si no carga la imagen */
-.logo::after {
-  content: "";
-  display: none;
-}
-
-/* Placeholder logo para demo */
-.logo-placeholder {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 10px;
-  background: #1f3a52;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.5px;
 }
 
 .panel-label {
@@ -78,6 +48,7 @@ body {
 }
 
 .menu-item {
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -126,6 +97,7 @@ body {
 .logout:hover {
   background: #f9fafb;
 }
+
 
 /* ===== MAIN ===== */
 .main {
