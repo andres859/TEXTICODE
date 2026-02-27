@@ -23,8 +23,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
 .logo {
   text-align: center;
   margin-bottom: 10px;
