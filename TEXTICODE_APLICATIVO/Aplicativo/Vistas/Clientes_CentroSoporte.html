@@ -55,28 +55,35 @@
 <main class="main">
   <h1>Centro de Soporte</h1>
 
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab('comprobantes', this)">Comprobantes</div>
-    <div class="tab" onclick="switchTab('contacto', this)">Contacto</div>
-  </div>
+    <div class="sidebar-subtitle">Portal Cliente</div>
 
-  <!-- TAB COMPROBANTES -->
-  <div id="tab-comprobantes">
-  <div class="search-bar">
-    <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#aaa" stroke-width="2" fill="none"/></svg>
-    <input type="text" placeholder="Buscar comprobantes...">
-  </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="../Vistas/Cliente_CuentaPersonal.html">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </span>
+        Cuenta Personal
+      </a>
+      <a class="nav-item" href="../Vistas/Cliente_PedidosEntregas.html">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        Pedidos y Entregas
+      </a>
+      <a class="nav-item active" href="../Vistas/Clientes_CentroSoporte.html">
+        <span class="nav-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </span>
+        Centro de Soporte
+      </a>
+    </nav>
 
-  <!-- Card 001 -->
-  <div class="card">
-    <div class="card-left">
-      <div class="doc-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#4a90d9" stroke-width="2">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-          <polyline points="10 9 9 9 8 9"/>
+    <div class="sidebar-logout">
+      <button class="logout-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
         </svg>
       </div>
       <span class="doc-num">001</span>
