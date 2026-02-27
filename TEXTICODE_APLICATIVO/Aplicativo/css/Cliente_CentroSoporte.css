@@ -2,76 +2,83 @@
   body { font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #f5f6fa; }
 
   /* SIDEBAR */
-  .sidebar {
-    width: 280px;
-    min-width: 280px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #e8eaed;
-    padding: 24px 16px;
-  }
-  .logo-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #e8eaed;
-    margin-bottom: 16px;
-    transform: scale(1.2); /* 150% más grande */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  }
 
-  .logo-icon {
-    width: 56px;
-    height: 56px;
-    background: #1a3a4a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-  .logo-icon svg { width: 32px; height: 32px; fill: white; }
-  .logo-text { font-weight: 700; font-size: 14px; letter-spacing: 2px; color: #1a3a4a; }
-  .portal-label { font-size: 12px; color: #888; margin-top: -13px; }
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #444;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.15s;
-    margin-bottom: 4px;
-  }
-  .nav-item:hover { background: #f0f2f5; }
-  .nav-item.active { background: #1a3a4a; color: white; }
-  .nav-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+.logo img {
+  width: 120px;
+}
 
-  .sidebar-spacer { flex: 1; }
+.panel-label {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
 
-  .logout-btn {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #444;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid #e8eaed;
-    transition: background 0.15s;
-  }
-  .logout-btn:hover { background: #f0f2f5; }
-  .logout-btn svg { width: 20px; height: 20px; }
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-  /* MAIN */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background: #1f3a52;
+  color: white;
+  font-weight: 500;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  background: white;
+  cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  padding: 28px 30px;
+  overflow-y: auto;
+}
+
+    /* MAIN */
   .main {
     flex: 1;
     padding: 32px;
