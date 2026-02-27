@@ -57,13 +57,14 @@
 
   <!-- BANNER -->
   <div class="profile-banner">
-    <div class="avatar-initials">MG</div>
+    <div class="avatar-initials" id="avatar-initials">MG</div>
+    <img id="avatar-img" src="" alt="Foto perfil" style="display:none; width:68px; height:68px; border-radius:50%; border:2px solid rgba(255,255,255,0.35); object-fit:cover; flex-shrink:0;">
     <div class="profile-info">
-      <div class="profile-name">Maria Gonzales</div>
-      <div class="profile-role">Confección del valle S.A.S.</div>
+      <div class="profile-name" id="display-nombre">Maria Gonzales</div>
+      <div class="profile-role" id="display-empresa">Confección del valle S.A.S.</div>
       <span class="badge-active">Activo</span>
     </div>
-    <button class="btn-edit">Editar Perfil</button>
+    <button class="btn-edit" onclick="abrirModalPerfil()">Editar Perfil</button>
   </div>
 
   <!-- TABS -->
@@ -94,7 +95,7 @@
           </span>
           <div>
             <div class="contact-label">Email</div>
-            <div class="contact-value">maria.gonzalez@empresa.com</div>
+            <div class="contact-value" id="display-email">maria.gonzalez@empresa.com</div>
           </div>
         </div>
 
@@ -106,7 +107,7 @@
           </span>
           <div>
             <div class="contact-label">Teléfono</div>
-            <div class="contact-value">+57 300 987 6543</div>
+            <div class="contact-value" id="display-telefono">+57 300 987 6543</div>
           </div>
         </div>
 
@@ -118,7 +119,7 @@
           </span>
           <div>
             <div class="contact-label">Empresa</div>
-            <div class="contact-value">Confecciones del Valle S.A.S.</div>
+            <div class="contact-value" id="display-empresa-contacto">Confecciones del Valle S.A.S.</div>
           </div>
         </div>
 
@@ -131,7 +132,7 @@
           </span>
           <div>
             <div class="contact-label">Dirección</div>
-            <div class="contact-value">Carrera 50 #23-45, Medellín, Colombia</div>
+            <div class="contact-value" id="display-direccion">Carrera 50 #23-45, Medellín, Colombia</div>
           </div>
         </div>
 
@@ -290,7 +291,71 @@
 
 </main>
 
+
+<!-- ===== MODAL EDITAR PERFIL ===== -->
+<div class="modal-overlay" id="modalPerfil">
+  <div class="modal-container">
+
+    <!-- Cabecera -->
+    <div class="modal-header">
+      <h3 class="modal-title">Editar Perfil</h3>
+      <button class="modal-close" onclick="cerrarModalPerfil()">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Foto de perfil -->
+    <div class="modal-foto-wrap">
+      <div class="modal-avatar" id="modal-avatar-preview">
+        <span id="modal-avatar-initials">MG</span>
+        <img id="modal-avatar-img" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:50%;">
+      </div>
+      <div class="modal-foto-btns">
+        <input type="file" id="input-foto" accept="image/*" style="display:none" onchange="previsualizarFoto(event)">
+        <button class="btn-subir-foto" onclick="document.getElementById('input-foto').click()">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+          </svg>
+          Subir Foto
+        </button>
+        <button class="btn-remover-foto" onclick="removerFoto()">Remover</button>
+      </div>
+    </div>
+
+    <!-- Campos del formulario -->
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Nombre Completo</label>
+        <input type="text" id="edit-nombre" class="form-input" value="Maria Gonzales">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Correo Electrónico</label>
+        <input type="email" id="edit-email" class="form-input" value="maria.gonzalez@empresa.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Teléfono</label>
+        <input type="tel" id="edit-telefono" class="form-input" value="+57 300 987 6543">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Dirección</label>
+        <input type="text" id="edit-direccion" class="form-input" value="Carrera 50 #23-45, Medellín, Colombia">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="modal-footer">
+      <button class="btn-cancelar" onclick="cerrarModalPerfil()">Cancelar</button>
+      <button class="btn-guardar" onclick="guardarCambios()">Guardar Cambios</button>
+    </div>
+
+  </div>
+</div>
+
+
 <script>
+  // ── Tabs ────────────────────────────────────────────────────
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -302,6 +367,93 @@
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     });
   });
+
+  // ── Abrir / cerrar modal ────────────────────────────────────
+  function abrirModalPerfil() {
+    document.getElementById('edit-nombre').value    = document.getElementById('display-nombre').textContent;
+    document.getElementById('edit-email').value     = document.getElementById('display-email').textContent;
+    document.getElementById('edit-telefono').value  = document.getElementById('display-telefono').textContent;
+    document.getElementById('edit-direccion').value = document.getElementById('display-direccion').textContent;
+
+    document.getElementById('modalPerfil').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function cerrarModalPerfil() {
+    document.getElementById('modalPerfil').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Cerrar al hacer clic en el fondo oscuro
+  document.getElementById('modalPerfil').addEventListener('click', function(e) {
+    if (e.target === this) cerrarModalPerfil();
+  });
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') cerrarModalPerfil();
+  });
+
+  // ── Foto de perfil ──────────────────────────────────────────
+  let fotoDataUrl = null;
+
+  function previsualizarFoto(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      fotoDataUrl = e.target.result;
+      document.getElementById('modal-avatar-initials').style.display = 'none';
+      const imgModal = document.getElementById('modal-avatar-img');
+      imgModal.src = fotoDataUrl;
+      imgModal.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function removerFoto() {
+    fotoDataUrl = null;
+    document.getElementById('input-foto').value = '';
+    document.getElementById('modal-avatar-initials').style.display = 'block';
+    const imgModal = document.getElementById('modal-avatar-img');
+    imgModal.src = '';
+    imgModal.style.display = 'none';
+  }
+
+  // ── Guardar cambios ─────────────────────────────────────────
+  function guardarCambios() {
+    const nombre    = document.getElementById('edit-nombre').value.trim();
+    const email     = document.getElementById('edit-email').value.trim();
+    const telefono  = document.getElementById('edit-telefono').value.trim();
+    const direccion = document.getElementById('edit-direccion').value.trim();
+
+    if (!nombre || !email) {
+      alert('El nombre y el correo son obligatorios.');
+      return;
+    }
+
+    // Actualizar datos en pantalla
+    document.getElementById('display-nombre').textContent           = nombre;
+    document.getElementById('display-email').textContent            = email;
+    document.getElementById('display-telefono').textContent         = telefono;
+    document.getElementById('display-direccion').textContent        = direccion;
+
+    // Actualizar iniciales del avatar
+    const iniciales = nombre.split(' ').map(p => p[0]).slice(0, 2).join('').toUpperCase();
+
+    if (fotoDataUrl) {
+      document.getElementById('avatar-initials').style.display = 'none';
+      const imgBanner = document.getElementById('avatar-img');
+      imgBanner.src = fotoDataUrl;
+      imgBanner.style.display = 'block';
+    } else {
+      document.getElementById('avatar-initials').style.display = 'flex';
+      document.getElementById('avatar-initials').textContent = iniciales;
+      document.getElementById('avatar-img').style.display = 'none';
+    }
+
+    cerrarModalPerfil();
+  }
 </script>
 
 </body>
