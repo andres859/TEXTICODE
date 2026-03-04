@@ -1,19 +1,7 @@
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #f5f6fa; }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #f3f4f6;
-  color: #111827;
-  display: flex;
-  min-height: 100vh;
-}
-
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
+  /* SIDEBAR */
 .sidebar {
   width: 260px;
   min-width: 260px;

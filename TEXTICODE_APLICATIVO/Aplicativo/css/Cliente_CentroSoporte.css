@@ -71,14 +71,7 @@
   cursor: pointer;
 }
 
-/* ===== MAIN ===== */
-.main {
-  flex: 1;
-  padding: 28px 30px;
-  overflow-y: auto;
-}
-
-    /* MAIN */
+/* MAIN */
   .main {
     flex: 1;
     padding: 32px;
