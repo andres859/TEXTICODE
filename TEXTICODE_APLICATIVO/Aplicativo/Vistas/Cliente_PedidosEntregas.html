@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedidos y Entregas</title>
+  <title>Texticode – Pedidos y Entregas</title>
+  <link rel="shortcut icon" href="../img/LogoTexticodeMini.png" type="image/x-icon">
 
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,21 +23,21 @@
     <div class="panel-label">Portal Cliente</div>
 
     <nav class="menu">
-      <a class="menu-item " href="../Vistas/Cliente_CuentaPersonal.html">
+      <a class="menu-item active" href="../Vistas/Cliente_CuentaPersonal.html">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
         </svg>
         Cuenta Personal
       </a>
 
-      <a class="menu-item active" href="../Vistas/Cliente_PedidosEntregas.html">
+      <a class="menu-item" href="../Vistas/Cliente_PedidosEntregas.html">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
         </svg>
         Pedidos y Entregas
       </a>
 
-      <a class="menu-item" href="Clientes_CentroSoporte.html">
+      <a class="menu-item" href="../Vistas/Clientes_CentroSoporte.html">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
         </svg>
@@ -45,6 +46,47 @@
     </nav>
   </div>
 
+  <!-- Logo real de Texticode -->
+<div class="sidebar-logo">
+  <!-- Imagen en lugar del SVG -->
+  <img src="../img/LogoTexticode.png" alt="Logo Texticode" width="80" height="80">
+  
+  <span style="font-size:0.78rem;font-weight:800;letter-spacing:0.1em;color:#06086c;margin-top:-20px;">
+  </span>
+</div>
+
+  <div class="sidebar-subtitle">Portaaal Cliente</div>
+
+  <nav class="sidebar-nav">
+    <a class="nav-item" href="../Vistas/Cliente_CuentaPersonal.html">
+      <span class="nav-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+      </span>
+      Cuenta Personal
+    </a>
+    <a class="nav-item active" href="../Vistas/Cliente_PedidosEntregas.html">
+      <span class="nav-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </span>
+      Pedidos y Entregas
+    </a>
+    <a class="nav-item" href="../Vistas/Clientes_CentroSoporte.html">
+      <span class="nav-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+      </span>
+      Centro de Soporte
+    </a>
+  </nav>
+
+  <div class="sidebar-logout">
+    <button class="logout-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" y1="12" x2="9" y2="12"/>
+      </svg>
+      Cerrar Sesión
+    </button>
   <div class="logout">
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
