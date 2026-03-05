@@ -105,19 +105,33 @@ body {
 /* CONTENT */
 .content {
     flex: 1;
-    padding: 40px;
+    padding: 28px 30px;
 }
 
 h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #111827;
+    font-family: Inter, "Segoe UI", sans-serif;
+    padding-bottom: 16px;
     margin-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .search {
     width: 300px;
-    padding: 10px;
+    padding: 9px 12px 9px 36px;
     border-radius: 8px;
     border: 1px solid #e5e7eb;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 24 24' stroke='%239ca3af' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z'/%3E%3C/svg%3E") no-repeat 10px center;
+    color: #374151;
+    outline: none;
+}
+
+.search::placeholder {
+    color: #9ca3af;
 }
 /* ===== CARDS ===== */
 

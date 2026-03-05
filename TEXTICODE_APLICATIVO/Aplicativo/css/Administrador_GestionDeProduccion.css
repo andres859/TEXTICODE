@@ -113,9 +113,20 @@ body {
 }
 
 .title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 600;
   color: #111827;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 0;
+}
+
+h2.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  padding-bottom: 0;
+  border-bottom: none;
   margin: 0;
 }
 
