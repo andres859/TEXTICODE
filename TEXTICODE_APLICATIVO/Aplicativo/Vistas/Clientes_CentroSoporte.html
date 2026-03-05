@@ -4,194 +4,302 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Centro de Soporte – Texticode</title>
+  <link rel="shortcut icon" href="../img/LogoTexticodeMini.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/Cliente_CentroSoporte.css">
-</head>
 <body>
 
-
-<div class="layout">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="sidebar-logo">
-      <img src="../img/LogoTexticode.png" alt="Logo Texticode" width="80" height="80">
-      <span style="font-size:0.78rem;font-weight:800;letter-spacing:0.1em;color:#06086c;margin-top:-20px;"></span>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div>
+    <div class="logo">
+      <img src="../img/LogoTexticode.png" alt="Logo Texticode">
     </div>
+    <div class="panel-label">Portal Cliente</div>
 
-    <div class="sidebar-subtitle">Portal Cliente</div>
-
-    <nav class="sidebar-nav">
-      <a class="nav-item" href="../Vistas/Cliente_CuentaPersonal.html">
-        <span class="nav-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-        </span>
+    <nav class="menu">
+      <a class="menu-item " href="../Vistas/Cliente_CuentaPersonal.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+        </svg>
         Cuenta Personal
       </a>
-      <a class="nav-item" href="../Vistas/Cliente_PedidosEntregas.html">
-        <span class="nav-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </span>
+
+      <a class="menu-item" href="../Vistas/Cliente_PedidosEntregas.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
         Pedidos y Entregas
       </a>
-      <a class="nav-item active" href="../Vistas/Clientes_CentroSoporte.html">
-        <span class="nav-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-        </span>
+
+      <a class="menu-item active" href="../Vistas/Clientes_CentroSoporte.html">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+        </svg>
         Centro de Soporte
       </a>
     </nav>
+  </div>
 
-    <div class="sidebar-logout">
-      <button class="logout-btn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-          <polyline points="16 17 21 12 16 7"/>
-          <line x1="21" y1="12" x2="9" y2="12"/>
+  <div class="logout">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
+    </svg>
+    Cerrar Sesión
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+  <h1>Centro de Soporte</h1>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('comprobantes', this)">Comprobantes</div>
+    <div class="tab" onclick="switchTab('contacto', this)">Contacto</div>
+  </div>
+
+  <!-- TAB COMPROBANTES -->
+  <div id="tab-comprobantes">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" stroke="#aaa" stroke-width="2" fill="none"/></svg>
+    <input type="text" placeholder="Buscar comprobantes...">
+  </div>
+
+  <!-- Card 001 -->
+  <div class="card">
+    <div class="card-left">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4a90d9" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
         </svg>
-        Cerrar Sesión
+      </div>
+      <span class="doc-num">001</span>
+      <span class="badge-available">Disponible</span>
+    </div>
+    <div class="card-info">
+      <div class="info-block"><label>Tipo:</label><span>Comprobante</span></div>
+      <div class="info-block"><label>Fecha entrega:</label><span>19/01/2024</span></div>
+      <div class="info-block"><label>Tamaño:</label><span>245 KB</span></div>
+      <div class="info-block"><label>Cliente:</label><span>María González</span></div>
+    </div>
+    <div class="card-actions">
+      <button class="btn-ver" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Ver
+      </button>
+      <button class="btn-descargar" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar
       </button>
     </div>
-  </aside>
+  </div>
 
-  <!-- MAIN -->
-  <main class="main">
-    <h1>Centro de Soporte</h1>
-
-    <!-- TABS -->
-    <div class="tabs">
-      <div class="tab active" data-tab="comprobantes">Comprobantes</div>
-      <div class="tab" data-tab="contacto">Contacto</div>
-    </div>
-
-    <!-- PANEL: COMPROBANTES -->
-    <div class="panel active" id="panel-comprobantes">
-      <div class="search-bar">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  <!-- Card 002 -->
+  <div class="card">
+    <div class="card-left">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4a90d9" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
         </svg>
-        <input type="text" id="search-input" placeholder="Buscar comprobantes..." />
       </div>
-
-      <div id="doc-list"></div>
-      <div class="no-results" id="no-results">No se encontraron comprobantes</div>
+      <span class="doc-num">002</span>
+      <span class="badge-available">Disponible</span>
     </div>
+    <div class="card-info">
+      <div class="info-block"><label>Tipo:</label><span>Factura</span></div>
+      <div class="info-block"><label>Fecha entrega:</label><span>16/01/2024</span></div>
+      <div class="info-block"><label>Tamaño:</label><span>189 KB</span></div>
+      <div class="info-block"><label>Cliente:</label><span>María González</span></div>
+    </div>
+    <div class="card-actions">
+      <button class="btn-ver" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Ver
+      </button>
+      <button class="btn-descargar" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar
+      </button>
+    </div>
+  </div>
 
-    <!-- PANEL: CONTACTO -->
-    <div class="panel" id="panel-contacto">
-      <div class="contact-grid">
+  <!-- Card 003 -->
+  <div class="card">
+    <div class="card-left">
+      <div class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4a90d9" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <span class="doc-num">003</span>
+      <span class="badge-available">Disponible</span>
+    </div>
+    <div class="card-info">
+      <div class="info-block"><label>Tipo:</label><span>Guía</span></div>
+      <div class="info-block"><label>Fecha entrega:</label><span>04/01/2024</span></div>
+      <div class="info-block"><label>Tamaño:</label><span>156 KB</span></div>
+      <div class="info-block"><label>Cliente:</label><span>María González</span></div>
+    </div>
+    <div class="card-actions">
+      <button class="btn-ver" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Ver
+      </button>
+      <button class="btn-descargar" onclick="window.location=''">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar
+      </button>
+    </div>
+  </div>
+  </div><!-- end tab-comprobantes -->
 
-        <div class="contact-card">
-          <div class="card-title"><span>📞</span> Información de Contacto</div>
-          <div class="contact-item">
-            <div class="contact-item-icon">📱</div>
-            <div class="contact-item-info"><label>Teléfono</label><span>+57 (4) 444-5555</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">💬</div>
-            <div class="contact-item-info"><label>WhatsApp</label><span>+57 300 123 4567</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">✉️</div>
-            <div class="contact-item-info"><label>Email</label><span>soporte@texticode.com</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">📍</div>
-            <div class="contact-item-info"><label>Dirección</label><span>Carrera 70 #45-30, Bogotá, Colombia</span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">🕐</div>
-            <div class="contact-item-info"><label>Horarios de Atención</label><span>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 12:00 PM</span></div>
+  <!-- TAB CONTACTO -->
+  <div id="tab-contacto" style="display:none;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:860px;">
+
+      <!-- Tarjeta: Información de Contacto -->
+      <div style="background:white; border-radius:14px; padding:28px 28px 32px; box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span style="font-size:16px; font-weight:600; color:#1a1a2e;">Información de Contacto</span>
+        </div>
+
+        <!-- Teléfono -->
+        <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" style="margin-top:2px; flex-shrink:0;">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.45 2 2 0 0 1 3.54 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <div style="font-size:12px; color:#888; margin-bottom:2px;">Teléfono</div>
+            <a href="tel:" style="font-size:15px; font-weight:700; color:#1a1a2e; text-decoration:none;">+57 (4) 444-5555</a>
           </div>
         </div>
 
-        <div class="contact-card">
-          <div class="card-title"><span>❓</span> Preguntas Frecuentes</div>
-          <div class="faq-item">
-            <div class="faq-q"><div class="faq-accent" style="background:#3B82F6"></div>¿Cómo puedo rastrear mi pedido?</div>
-            <div class="faq-a">Puedes rastrear tu pedido en la sección 'Pedidos y Entregas' donde encontrarás el estado actualizado y la información de seguimiento.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q"><div class="faq-accent" style="background:#10B981"></div>¿Dónde descargo mis comprobantes?</div>
-            <div class="faq-a">Los comprobantes están disponibles en la pestaña 'Comprobantes' de esta sección una vez que tu pedido haya sido entregado.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q"><div class="faq-accent" style="background:#8B5CF6"></div>¿Cómo modifico un pedido?</div>
-            <div class="faq-a">Para modificar un pedido, crea un ticket de soporte en la categoría 'Pedidos' con los detalles del cambio requerido.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q"><div class="faq-accent" style="background:#F59E0B"></div>¿Qué hacer si hay retrasos?</div>
-            <div class="faq-a">Si tu pedido presenta retrasos, te notificaremos automáticamente. También puedes contactarnos para obtener información detallada.</div>
+        <!-- WhatsApp -->
+        <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" style="margin-top:2px; flex-shrink:0;">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <div>
+            <div style="font-size:12px; color:#888; margin-bottom:2px;">WhatsApp</div>
+            <a href="https://wa.me/" style="font-size:15px; font-weight:700; color:#1a1a2e; text-decoration:none;">+57 300 123 4567</a>
           </div>
         </div>
 
+        <!-- Email -->
+        <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" style="margin-top:2px; flex-shrink:0;">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div>
+            <div style="font-size:12px; color:#888; margin-bottom:2px;">Email</div>
+            <a href="mailto:soporte@texticode.com" style="font-size:15px; font-weight:700; color:#1a1a2e; text-decoration:none;">soporte@texticode.com</a>
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" style="margin-top:2px; flex-shrink:0;">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div>
+            <div style="font-size:12px; color:#888; margin-bottom:2px;">Dirección</div>
+            <span style="font-size:15px; font-weight:700; color:#1a1a2e;">Carrera 70 #45-30, Bogotá, Colombia</span>
+          </div>
+        </div>
+
+        <!-- Horarios -->
+        <div style="display:flex; align-items:flex-start; gap:14px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" style="margin-top:2px; flex-shrink:0;">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div>
+            <div style="font-size:12px; color:#888; margin-bottom:2px;">Horarios de Atención</div>
+            <div style="font-size:15px; font-weight:700; color:#1a1a2e;">Lunes a Viernes: 8:00 AM - 6:00 PM</div>
+            <div style="font-size:15px; font-weight:700; color:#1a1a2e;">Sábados: 8:00 AM - 12:00 PM</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Tarjeta: Preguntas Frecuentes -->
+      <div style="background:white; border-radius:14px; padding:28px 28px 32px; box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span style="font-size:16px; font-weight:600; color:#1a1a2e;">Preguntas Frecuentes</span>
+        </div>
+
+        <!-- FAQ 1 -->
+        <div style="display:flex; gap:14px; margin-bottom:20px;">
+          <div style="width:4px; min-width:4px; background:#4a90d9; border-radius:4px;"></div>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#1a1a2e; margin-bottom:5px;">¿Cómo puedo rastrear mi pedido?</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">Puedes rastrear tu pedido en la sección "Pedidos y Entregas" donde encontrarás el estado actualizado y la información de seguimiento.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div style="display:flex; gap:14px; margin-bottom:20px;">
+          <div style="width:4px; min-width:4px; background:#27ae60; border-radius:4px;"></div>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#1a1a2e; margin-bottom:5px;">¿Dónde descargo mis comprobantes?</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">Los comprobantes están disponibles en la pestaña "Comprobantes" de esta sección una vez que tu pedido haya sido entregado.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div style="display:flex; gap:14px; margin-bottom:20px;">
+          <div style="width:4px; min-width:4px; background:#9b59b6; border-radius:4px;"></div>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#1a1a2e; margin-bottom:5px;">¿Cómo modifico un pedido?</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">Para modificar un pedido, crea un ticket de soporte en la categoría "Pedidos" con los detalles del cambio requerido.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div style="display:flex; gap:14px;">
+          <div style="width:4px; min-width:4px; background:#f39c12; border-radius:4px;"></div>
+          <div>
+            <div style="font-size:14px; font-weight:700; color:#1a1a2e; margin-bottom:5px;">¿Qué hacer si hay retrasos?</div>
+            <div style="font-size:13px; color:#666; line-height:1.5;">Si tu pedido presenta retrasos, te notificaremos automáticamente. También puedes contactarnos para obtener información detallada.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </main>
+  </div><!-- end tab-contacto -->
+
+</main>
+
+<button class="help-btn">?</button>
+
+<div class="toast" id="toast">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+  ¡Mensaje enviado con éxito! Te responderemos pronto.
 </div>
 
 <script>
-  const docs = [
-    { num: '001', type: 'Comprobante', date: '19/01/2024', size: '245 KB', client: 'María González' },
-    { num: '002', type: 'Factura',      date: '16/01/2024', size: '189 KB', client: 'María González' },
-    { num: '003', type: 'Guía',         date: '04/01/2024', size: '156 KB', client: 'María González' },
-  ];
-
-  function renderDocs(filter) {
-    const list = document.getElementById('doc-list');
-    const noResults = document.getElementById('no-results');
-    const q = (filter || '').toLowerCase();
-
-    const filtered = docs.filter(d =>
-      d.type.toLowerCase().includes(q) || d.num.includes(q)
-    );
-
-    if (filtered.length === 0) {
-      list.innerHTML = '';
-      noResults.style.display = 'block';
-      return;
-    }
-
-    noResults.style.display = 'none';
-    list.innerHTML = filtered.map(doc => `
-      <div class="doc-card">
-        <div class="doc-icon">📄</div>
-        <div class="doc-num-badge">
-          <span class="doc-num">${doc.num}</span>
-          <span class="badge">Disponible</span>
-        </div>
-        <div class="doc-meta">
-          <div class="meta-item"><label>Tipo:</label><span>${doc.type}</span></div>
-          <div class="meta-item"><label>Fecha entrega:</label><span>${doc.date}</span></div>
-          <div class="meta-item"><label>Tamaño:</label><span>${doc.size}</span></div>
-          <div class="meta-item"><label>Cliente:</label><span>${doc.client}</span></div>
-        </div>
-        <div class="doc-actions">
-          <button class="btn-ver">👁 Ver</button>
-          <button class="btn-download">⬇ Descargar</button>
-        </div>
-      </div>
-    `).join('');
+  function switchTab(tab, el) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('tab-comprobantes').style.display = tab === 'comprobantes' ? 'block' : 'none';
+    document.getElementById('tab-contacto').style.display = tab === 'contacto' ? 'block' : 'none';
   }
-
-  // Tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-    });
-  });
-
-  // Search
-  document.getElementById('search-input').addEventListener('input', function () {
-    renderDocs(this.value);
-  });
-
-  // Initial render
-  renderDocs('');
 </script>
 
 </body>
